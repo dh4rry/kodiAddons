@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.1.7" provider-name="dharry">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+		<summary lang="en">ProSieben, Sat.1, Kabel 1 and Sixx live streams</summary>
+		<summary lang="de">LiveTV von ProSieben, Sat.1, Kabel 1 and Sixx</summary>
+		<description lang="en">LiveTV</description>
+		<description lang="de">LiveTv</description>
+		<disclaimer lang="en"></disclaimer>
+    <website></website>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum></forum>
+    <platform>all</platform>
+  </extension>
+</addon>

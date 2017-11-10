@@ -1,0 +1,3 @@
+<settings>
+   <setting id="datetitle" type="bool" label="Austrahlungsdatum im Title" default="false"/>
+</settings>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.dh4rry"
+		name="dh4rry Add-ons"
+		version="1.0.1"
+		provider-name="dh4rry">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="repository.dh4rry">
+            <info compressed="false">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/</datadir>
+            <hashes>false</hashes>
+        </extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install add-ons from dh4rry</summary>
+		<summary lang="de">Installiere Add-ons von dh4rry</summary>
+		<description>download and install add-ons from repository-dh4rry addon-repository.</description>
+		<description lang="de">Downloade und installiere Add-ons vom repository-dh4rry Add-on-Repository.</description>		<platform>all</platform>
+	</extension>
+</addon>

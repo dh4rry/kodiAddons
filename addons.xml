@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.shifttv"
+       name="ShiftTV"
+       version="1.0.0"
+       provider-name="Harry">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Shift.TV</summary>
+    <description lang="en">shift.tv addon</description>
+    <platform>all</platform>
+    <language>en</language>
+    <source></source>
+    <license>Public Domain</license>
+  </extension>
+</addon>
+
+<addon id="repository.abaphacker.gotham"
+		name="abaphacker Add-ons"
+		version="1.0.1"
+		provider-name="Jugger">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="repository.abaphacker.gotham">
+            <info compressed="false">https://raw.githubusercontent.com/abaphacker/kodiAddons/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/abaphacker/kodiAddons/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/abaphacker/kodiAddons/master/</datadir>
+            <hashes>false</hashes>
+        </extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install add-ons from abaphacker</summary>
+		<summary lang="de">Installiere Add-ons von abaphacker</summary>
+		<description>download and install add-ons from repository-abaphacker addon-repository.</description>
+		<description lang="de">Downloade und installiere Add-ons vom repository-abaphacker Add-on-Repository.</description>		<platform>all</platform>
+	</extension>
+</addon>
+</addons>
