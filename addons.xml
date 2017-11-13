@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.shifttv"
-       name="ShiftTV"
-       version="1.0.0"
-       provider-name="Harry">
-  <requires>
-    <import addon="xbmc.python" version="2.14.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Shift.TV</summary>
-    <description lang="en">shift.tv addon</description>
-    <platform>all</platform>
-    <language>en</language>
-    <source></source>
-    <license>Public Domain</license>
-  </extension>
-</addon>
-
-<addon id="repository.abaphacker.gotham"
-		name="abaphacker Add-ons"
+<addon id="repository.dh4rry"
+		name="dh4rry Add-ons"
 		version="1.0.1"
-		provider-name="Jugger">
+		provider-name="dh4rry">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
-        <extension point="xbmc.addon.repository" name="repository.abaphacker.gotham">
-            <info compressed="false">https://raw.githubusercontent.com/abaphacker/kodiAddons/master/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/abaphacker/kodiAddons/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/abaphacker/kodiAddons/master/</datadir>
+        <extension point="xbmc.addon.repository" name="repository.dh4rry">
+            <info compressed="false">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/</datadir>
             <hashes>false</hashes>
         </extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Install add-ons from abaphacker</summary>
-		<summary lang="de">Installiere Add-ons von abaphacker</summary>
-		<description>download and install add-ons from repository-abaphacker addon-repository.</description>
-		<description lang="de">Downloade und installiere Add-ons vom repository-abaphacker Add-on-Repository.</description>		<platform>all</platform>
+		<summary>Install add-ons from dh4rry</summary>
+		<summary lang="de">Installiere Add-ons von dh4rry</summary>
+		<description>download and install add-ons from repository-dh4rry addon-repository.</description>
+		<description lang="de">Downloade und installiere Add-ons vom repository-dh4rry Add-on-Repository.</description>		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.1.7" provider-name="dharry">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+  <extension point="xbmc.addon.metadata">
+		<summary lang="en">ProSieben, Sat.1, Kabel 1 and Sixx live streams</summary>
+		<summary lang="de">LiveTV von ProSieben, Sat.1, Kabel 1 and Sixx</summary>
+		<description lang="en">LiveTV</description>
+		<description lang="de">LiveTv</description>
+		<disclaimer lang="en"></disclaimer>
+    <website></website>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum></forum>
+    <platform>all</platform>
+  </extension>
 </addon>
 </addons>
