@@ -21,7 +21,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.1.7" provider-name="dharry">
+<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.1.8" provider-name="dharry">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.12.4"/>
