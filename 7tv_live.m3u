@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="Pro7.de" tvg-logo="Pro7.png",Pro7
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Pro7
+#EXTINF:-1 tvg-id="Kabel.de" tvg-logo="Kabel1.png",Kabel1
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1
+#EXTINF:-1 tvg-id="Sat1.de" tvg-logo="SAT1.png",SAT1
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1
+#EXTINF:-1 tvg-id="Sixx.de" tvg-logo="SIXX.png",Sixx
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SIXX
+#EXTINF:-1 tvg-id="Sat1Gold.de" tvg-logo="prosiebenmaxx.png",7MAXX
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=prosiebenmaxx
+#EXTINF:-1 tvg-id="KabelEinsDoku.de" tvg-logo="Kabel1Doku.png",Kabel1 Doku
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1Doku
+#EXTINF:-1 tvg-id="Sat1Gold.de" tvg-logo="SAT1Gold.png",SAT1 Gold
+http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1Gold
