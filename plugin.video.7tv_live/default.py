@@ -108,7 +108,7 @@ def add_channel(name):
     ch_icon = newimg = os.path.join(
         xbmcaddon.Addon().getAddonInfo('path'), "resource", name + ".png")
     liz = xbmcgui.ListItem(
-        channels[name]['lable'], iconImage=ch_icon, thumbnailImage="")
+        channels[name]['lable'], iconImage=ch_icon, thumbnailImage=ch_icon)
     infoLabels = {"Title": name}
     liz.setInfo(type="Video", infoLabels=infoLabels)
     liz.setProperty('IsPlayable', 'true')
