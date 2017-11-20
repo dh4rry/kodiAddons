@@ -2,15 +2,15 @@
 <addons>
 <addon id="repository.dh4rry"
 		name="dh4rry Add-ons"
-		version="1.0.1"
+		version="1.0.2"
 		provider-name="dh4rry">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
         <extension point="xbmc.addon.repository" name="repository.dh4rry">
-            <info compressed="false">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/dh4rry/kodiAddons/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/dh4rry/kodiAddons/master/</datadir>
+            <info compressed="false">https://github.com/dh4rry/kodiAddons/raw/master/addons.xml</info>
+            <checksum>https://github.com/dh4rry/kodiAddons/raw/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://github.com/dh4rry/kodiAddons/raw/master</datadir>
             <hashes>false</hashes>
         </extension>
 	<extension point="xbmc.addon.metadata">
@@ -21,7 +21,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.1.8" provider-name="dharry">
+<addon id="plugin.video.7tv_live" name="7TV-Live" version="0.2.0" provider-name="dharry">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.12.4"/>

@@ -106,7 +106,7 @@ def getJson(channel):
 def add_channel(name):
     u = sys.argv[0] + "?channel=" + name
     ch_icon = newimg = os.path.join(
-        xbmcaddon.Addon().getAddonInfo('path'), "resource", name + ".png")
+        xbmcaddon.Addon().getAddonInfo('path'), "resources", name + ".png")
     liz = xbmcgui.ListItem(
         channels[name]['lable'], iconImage=ch_icon, thumbnailImage=ch_icon)
     infoLabels = {"Title": name}
