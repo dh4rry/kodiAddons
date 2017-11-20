@@ -7,9 +7,11 @@ http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1
 #EXTINF:-1 tvg-id="Sixx.de" group-title="Filme / Serien" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/SIXX.png",Sixx
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SIXX
-#EXTINF:-1 tvg-id="prosiebenmaxx.de"  group-title="Nachrichten;Dokumentationen"  tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/prosiebenmaxx",7MAXX
+#EXTINF:-1 tvg-id="prosiebenmaxx.de"  group-title="Nachrichten;Dokumentationen"  tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/prosiebenmaxx.png",7MAXX
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=prosiebenmaxx
 #EXTINF:-1 tvg-id="KabelEinsDoku.de"  group-title="Dokumentationen" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/Kabel1Doku.png",Kabel1 Doku
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1Doku
 #EXTINF:-1 tvg-id="Sat1Gold.de" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/SAT1Gold.png",SAT1 Gold
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1Gold
+#EXTINF:-1 tvg-id="disneychannel.de" group-title="Kinde / Jugend" tvg-logo="https://raw.githubusercontent.com/kodinerds/repo/master/plugin.video.disneychannel_de/icon.png",Disney Channel
+http://localhost:60666/?plugin://plugin.video.disneychannel_de/?mode=playLive
