@@ -15,3 +15,25 @@ http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1Doku
 http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1Gold
 #EXTINF:-1 tvg-id="disneychannel.de" group-title="Kinder / Jugend" tvg-logo="https://raw.githubusercontent.com/kodinerds/repo/master/plugin.video.disneychannel_de/icon.png",Disney Channel
 http://localhost:60666/?plugin://plugin.video.disneychannel_de/?mode=playLive
+#EXTINF: tvg-id="Euronews.nws",tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/39/Euronews._2016_alternative_logo.png",euronews
+http://localhost:62555/?plugin://plugin.video.youtube/play/?video_id=9V0_ok938R4
+#EXTINF: tvg-logo="https://www.rocketbeans.tv/wp-content/themes/rocket-beans/images/logo.png",Rocketbeans TV
+http://localhost:62555/?plugin://plugin.video.youtube/play/?video_id=j6He5m7pOM0
+#EXTINF:-1 tvg-id="RTL" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl.png?raw=true",RTL
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl
+#EXTINF:-1 tvg-id="RTL2" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl2.png?raw=true",RTL2
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl2
+#EXTINF:-1 tvg-id="RTLnitro" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl%20nitro.png?raw=true",RTL nitro
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=nitro
+#EXTINF:-1 tvg-id="VOX" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/vox.png?raw=true",VOX
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=vox
+#EXTINF:-1 tvg-id="RTLplus" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtlplus.png?raw=true",RTL plus
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtlplus
+#EXTINF:-1 tvg-id="toggoplus" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/toggoplus.png?raw=true",Toggo plus
+http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=toggoplus
+#EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/tele%205.png?raw=true",tvg-id="Tele 5",Tele 5 (Magine)
+http://localhost:60666/?plugin://plugin.video.magine/?mode=live_play&channelid=10635
+#EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/tele%205.png?raw=true",tvg-id="Tele 5",Tele 5 (Zattoo)
+http://localhost:60666/?plugin://plugin.video.zattoo_com/?mode=watch&id=tele-5
+#EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/dmax.png?raw=true",tvg-id="DMAX",DMAX (Zattoo)
+http://localhost:60666/?plugin://plugin.video.zattoo_com/?mode=watch&id=dmax
