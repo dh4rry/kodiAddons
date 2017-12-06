@@ -31,8 +31,6 @@ http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=v
 http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtlplus
 #EXTINF:-1 tvg-id="toggoplus" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/toggoplus.png?raw=true",Toggo plus
 http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=toggoplus
-#EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/tele%205.png?raw=true",tvg-id="Tele 5",Tele 5 (Magine)
-http://localhost:60666/?plugin://plugin.video.magine/?mode=live_play&channelid=10635
 #EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/tele%205.png?raw=true",tvg-id="Tele 5",Tele 5 (Zattoo)
 http://localhost:60666/?plugin://plugin.video.zattoo_com/?mode=watch&id=tele-5
 #EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/dmax.png?raw=true",tvg-id="DMAX",DMAX (Zattoo)
