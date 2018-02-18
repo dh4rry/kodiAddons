@@ -15,7 +15,11 @@ import json
 import urllib
 import urllib2
 from urlparse import parse_qsl
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    sys.path.append('/storage/.kodi/addons/script.module.beautifulsoup4/lib')
+    from bs4 import BeautifulSoup
 
 
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36'
