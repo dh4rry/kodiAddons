@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.open_sap" name="OpenSAP" version="0.0.3" provider-name="dh4rry">
+<addon id="plugin.video.open_sap" name="OpenSAP" version="0.1.0" provider-name="dh4rry">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.12.4"/>
@@ -12,8 +12,8 @@
   <extension point="xbmc.addon.metadata">
 		<summary lang="en">OpenSAP</summary>
 		<summary lang="de">OpenSAP</summary>
-		<description lang="en">OpenSAP</description>
-		<description lang="de">OpenSAP</description>
+		<description lang="en">OpenSAP Course open.sap.com</description>
+		<description lang="de">OpenSAP Kurse open.sap.com</description>
 		<disclaimer lang="en"></disclaimer>
     <website></website>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>

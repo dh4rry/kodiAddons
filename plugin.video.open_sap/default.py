@@ -16,6 +16,8 @@ def login():
     addon = xbmcaddon.Addon('plugin.video.open_sap')
     user = addon.getSetting('Username')
     pw = addon.getSetting('Password')
+    if user == "":
+        addon.openSettings()
     r = s.get('https://open.sap.com/sessions/new')
     soup = BeautifulSoup(r.content, 'html.parser')
     auth_token = soup.find("input", { "name": "authenticity_token"} )['value']
@@ -29,10 +31,15 @@ def get_enrollments():
     r = s.get('https://open.sap.com/api/v2/courses?include=channel%2Cuser_enrollment')
     j = json.loads(r.content)
     enrollments = []
+    found = False
     for data in j['data']:
         if 'user_enrollment' in data['relationships']:
+            found = True
             addDirectoryItem(plugin.handle, plugin.url_for(show_course, data['id']), ListItem(data['attributes']['title']), True)
             print(data['id'])
+    if found == False:
+        addDirectoryItem(plugin.handle, 'plugin://plugin.video.open_sap/', ListItem('No enrollment or wrong login data'), True)
+    
     endOfDirectory(plugin.handle)
 
 @plugin.route('/show_course/<course_id>')
