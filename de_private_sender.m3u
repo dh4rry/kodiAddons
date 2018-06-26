@@ -1,42 +1,42 @@
 #EXTM3U
+#EXTINF:-1 tvg-name="KiKA" tvg-id="Kika.de" group-title="Kinder" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/kika.png",KiKA
+https://kikade-lh.akamaihd.net/i/livetvkika_de@450035/index_3776_av-p.m3u8
+#EXTINF:-1 tvg-id="TOGGOplus.de" group-title="Kinder" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/toggoplus.png?raw=true",Toggo plus
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=toggoplus
+#EXTINF:-1 tvg-id="	SuperRTL.de" group-title="Kinder" tvg-logo="https://github.com/3PO/Senderlogos/blob/master//super%20rtl%20a.png?raw=true",Super RTL
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=superrtl
+#EXTINF:-1 tvg-name="Nickelodeon" tvg-id="Nick.de" group-title="Kinder" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/nickelodeon.png",Nickelodeon
+http://unilivemtveu-lh.akamaihd.net/i/nickde_1@448749/index_3500_av-b.m3u8
 #EXTINF:-1 tvg-id="Pro7.de" group-title="Vollprogramm" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/Pro7.png",Pro7
 plugin://plugin.video.7tv_live/?channel=Pro7
 #EXTINF:-1 tvg-id="Kabel.de" group-title="Vollprogramm" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/Kabel1.png",Kabel1
-httpplugin://plugin.video.7tv_live/?channel=Kabel1
+plugin://plugin.video.7tv_live/?channel=Kabel1
 #EXTINF:-1 tvg-id="Sat1.de" group-title="Vollprogramm" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/SAT1.png",SAT1
-http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1
+plugin://plugin.video.7tv_live/?channel=SAT1
 #EXTINF:-1 tvg-id="Sixx.de" group-title="Filme / Serien" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/SIXX.png",Sixx
-http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SIXX
+plugin://plugin.video.7tv_live/?channel=SIXX
 #EXTINF:-1 tvg-id="prosiebenmaxx.de"  group-title="Nachrichten;Dokumentationen"  tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/prosiebenmaxx.png",7MAXX
-http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=prosiebenmaxx
+plugin://plugin.video.7tv_live/?channel=prosiebenmaxx
 #EXTINF:-1 tvg-id="KabelEinsDoku.de"  group-title="Dokumentationen" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/Kabel1Doku.png",Kabel1 Doku
-http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=Kabel1Doku
+plugin://plugin.video.7tv_live/?channel=Kabel1Doku
 #EXTINF:-1 tvg-id="Sat1Gold.de" tvg-logo="https://raw.githubusercontent.com/dh4rry/kodiAddons/master/plugin.video.7tv_live/resources/SAT1Gold.png",SAT1 Gold
-http://localhost:60666/?plugin://plugin.video.7tv_live/?channel=SAT1Gold
+plugin://plugin.video.7tv_live/?channel=SAT1Gold
 #EXTINF:-1 tvg-id="disneychannel.de" group-title="Kinder / Jugend" tvg-logo="https://raw.githubusercontent.com/kodinerds/repo/master/plugin.video.disneychannel_de/icon.png",Disney Channel
-http://localhost:60666/?plugin://plugin.video.disneychannel_de/?mode=playLive
-#EXTINF: tvg-id="Euronews.nws",tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/39/Euronews._2016_alternative_logo.png",euronews
-http://localhost:62555/?plugin://plugin.video.youtube/play/?video_id=9V0_ok938R4
-#EXTINF: tvg-logo="https://www.rocketbeans.tv/wp-content/themes/rocket-beans/images/logo.png",Rocketbeans TV
-http://localhost:62555/?plugin://plugin.video.youtube/play/?video_id=j6He5m7pOM0
-#EXTINF:-1 tvg-id="RTL" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl.png?raw=true",RTL
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl
-#EXTINF:-1 tvg-id="RTL2" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl2.png?raw=true",RTL2
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl2
-#EXTINF:-1 tvg-id="RTLnitro" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl%20nitro.png?raw=true",RTL nitro
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=nitro
-#EXTINF:-1 tvg-id="VOX" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/vox.png?raw=true",VOX
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=vox
+plugin://plugin.video.disneychannel_de/?mode=playLive
+#EXTINF:-1 tvg-id="RTL.de" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl.png?raw=true",RTL
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl
+#EXTINF:-1 tvg-id="RTL2.de" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl2.png?raw=true",RTL2
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtl2
+#EXTINF:-1 tvg-id="RTLnitro.de" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtl%20nitro.png?raw=true",RTL nitro
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=nitro
+#EXTINF:-1 tvg-id="VO.deX" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/vox.png?raw=true",VOX
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=vox
 #EXTINF:-1 tvg-id="RTLplus" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/rtlplus.png?raw=true",RTL plus
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtlplus
-#EXTINF:-1 tvg-id="TOGGOplus.de" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master/toggoplus.png?raw=true",Toggo plus
-plugin://plugin.video.rtlnow/?mode=playchannel&channel=toggoplus
-#EXTINF:-1 tvg-id="SRTL.de" group-title="Vollprogramm" tvg-logo="https://github.com/3PO/Senderlogos/blob/master//super%20rtl%20a.png?raw=true",Super RTL
-http://localhost:60666/?plugin://plugin.video.rtlnow/?mode=playchannel&channel=superrtl
+plugin://plugin.video.rtlnow/?mode=playchannel&channel=rtlplus
 #EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/tele%205.png?raw=true",tvg-id="Tele 5",Tele 5 (Zattoo)
-http://localhost:60666/?plugin://plugin.video.zattoo_com/?mode=watch&id=tele-5
+plugin://plugin.video.zattoo_com/?mode=watch&id=tele-5
 #EXTINF: tvg-logo="https://github.com/3PO/Senderlogos/blob/master/dmax.png?raw=true",tvg-id="DMAX",DMAX (Zattoo)
-http://localhost:60666/?plugin://plugin.video.zattoo_com/?mode=watch&id=dmax
+plugin://plugin.video.zattoo_com/?mode=watch&id=dmax
 #EXTINF:-1 tvg-name="Das Erste HD" tvg-id="ARD.de" group-title="Vollprogramm" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/daserstehd.png",Das Erste HD
 https://derste247livede.akamaized.net/hls/live/658317/daserste_de/caf607e336145f45de615e6894b7d811/index_7.m3u8
 #EXTINF:-1 tvg-name="Das Erste" tvg-id="ARD.de" group-title="Vollprogramm" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/daserste.png",Das Erste
@@ -59,3 +59,7 @@ http://onelivestream-lh.akamaihd.net/i/one_livestream@568814/index_7_av-p.m3u8
 https://zdf1314-lh.akamaihd.net/i/de13_v1@392877/index_3096_av-b.m3u8
 #EXTINF:-1 tvg-name="ZDFinfo" tvg-id="ZDFinfo.de" group-title="Spartenprogramm" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/zdfinfo.png",ZDFinfo
 http://zdf1112-lh.akamaihd.net/i/de12_v1@392882/index_3096_av-p.m3u8
+#EXTINF: tvg-id="Euronews.nws",tvg-logo="https://upload.wikimedia.org/wikipedia/commons/3/39/Euronews._2016_alternative_logo.png",euronews
+plugin://plugin.video.youtube/play/?video_id=9V0_ok938R4
+#EXTINF: tvg-logo="https://www.rocketbeans.tv/wp-content/themes/rocket-beans/images/logo.png",Rocketbeans TV
+plugin://plugin.video.youtube/play/?video_id=j6He5m7pOM0
