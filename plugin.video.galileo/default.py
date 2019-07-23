@@ -49,10 +49,12 @@ def list_videos():
 def getvideoid(client_location):
     debug("getvideoid client_location :"+client_location)
     inhalt = geturl(client_location)
-    video_id=re.compile("var clipID = '(.+?)'", re.DOTALL).findall(inhalt)[0]
+    metadataurl =re.compile("getJSON\(atob\('(.+?)'\)", re.DOTALL).findall(inhalt)[0]
+    metadataurl = str(base64.b64decode(metadataurl))
+    video_id = metadataurl.split('/')[-1]
     source_id = '16'
     videos = playvideo(video_id, client_location,  source_id)
-
+    
 def playvideo(video_id,  client_location, source_id=None):
     from hashlib import sha1
 
