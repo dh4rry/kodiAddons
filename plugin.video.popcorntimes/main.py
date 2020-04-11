@@ -72,22 +72,36 @@ def list_gerne():
 	
 @plugin.route('/list_movies/<path:url>')
 def list_movies(url):
+	xbmcplugin.setContent(plugin.handle, 'Movies')
 	req = s.get(base_url + url)
 	soup = BeautifulSoup(req.text, "html.parser")
 	mov_divs = soup.find_all("div", class_ = "pt-movie-tile-full")
 	for div in mov_divs:
-		title = div.find("a").find("img").get("alt")
-		liz = xbmcgui.ListItem( title)
-		img = div.find("a").find("img").get("data-src")
-		if img is None:
-			img = div.find("a").find("img").get("src")
-		liz.setArt({ 'poster': "https:" + img }),
-		liz.setProperty('IsPlayable', 'true')
-		liz.setInfo('video', {'Title': title})
-		mov_url = base_url + div.find("a").get("href")
-		addDirectoryItem(plugin.handle, plugin.url_for(play, mov_url), liz)
+		if div.find("a") is not None:
+			title = div.find("a").find("img").get("alt")
+			liz = xbmcgui.ListItem( title)
+			year = ""			
+			plot = ""
+			if div.find("p", class_ = "pt-tile-desc") is not None:			
+				plot = div.find("p", class_ = "pt-tile-desc").text
+			if div.find("p", attrs={'class': None}) is not None:			
+				plot = div.find("p", attrs={'class': None}).text
+			
+			if div.find("p", class_ = "pt-video-time") is not None:			
+				year = div.find("p", class_ = "pt-video-time").text.split('|',1)[0].strip()
+				xbmc.log("year:" + year, level=xbmc.LOGNOTICE)
+
+			img = div.find("a").find("img").get("data-src")
+			if img is None:
+				img = div.find("a").find("img").get("src")
+			liz.setArt({ 'poster': "https:" + img }),
+			liz.setProperty('IsPlayable', 'true')
+			liz.setInfo('video', {'Title': title, 'Plot': plot, 'Year': int(year) })
+			mov_url = base_url + div.find("a").get("href")
+			addDirectoryItem(plugin.handle, plugin.url_for(play, mov_url), liz, False)
 
 	endOfDirectory(plugin.handle)
+	xbmcplugin.setContent(plugin.handle, 'Movies')
 
 
 @plugin.route('/play/<path:movie_url>')
@@ -95,12 +109,9 @@ def play(movie_url):
 	title = movie_url
 	liz = xbmcgui.ListItem( 'Hard to Fight', iconImage='', thumbnailImage='')
 	streamUrl = getStream(movie_url)
-	xbmc.log("sitemurl:" + movie_url, level=xbmc.LOGNOTICE)        	
-	xbmc.log("streamurl:" + streamUrl, level=xbmc.LOGNOTICE)        
 	fullurl = streamUrl.strip() + "|Referer=" + movie_url.strip()
 	liz.setPath(fullurl)
 	xbmcplugin.setResolvedUrl(plugin.handle, True, liz)
 
 if __name__ == '__main__':
 	plugin.run()
-
