@@ -90,13 +90,16 @@ def list_movies(url):
 			if div.find("p", class_ = "pt-video-time") is not None:			
 				year = div.find("p", class_ = "pt-video-time").text.split('|',1)[0].strip()
 				xbmc.log("year:" + year, level=xbmc.LOGNOTICE)
-
+			try:
+				year = int(year)
+			except:
+				year = None
 			img = div.find("a").find("img").get("data-src")
 			if img is None:
 				img = div.find("a").find("img").get("src")
 			liz.setArt({ 'poster': "https:" + img }),
 			liz.setProperty('IsPlayable', 'true')
-			liz.setInfo('video', {'Title': title, 'Plot': plot, 'Year': int(year) })
+			liz.setInfo('video', {'Title': title, 'Plot': plot, 'Year': year })
 			mov_url = base_url + div.find("a").get("href")
 			addDirectoryItem(plugin.handle, plugin.url_for(play, mov_url), liz, False)
 
