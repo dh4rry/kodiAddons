@@ -48,30 +48,39 @@ def decode(enc):
 def getStream(siteUrl):
 	site = s.get(siteUrl)
 	match = re.findall(r"PCTMLOC = \"(.*)\"", site.text)
-	encoded = match[0]
-	print(encoded)
-	return "https:" + decode(encoded).decode("utf-8") 
+	if len(match) < 1:
+		dialog = xbmcgui.Dialog()
+		soup = BeautifulSoup(site.text, "html.parser")
+		sorry = soup.find('h3', text='Es tut uns leid...' )		
+		if sorry is None:
+			dialog.notification('Fehler', 'Stream konnte nicht ermittelt werden', xbmcgui.NOTIFICATION_ERROR, 5000)		
+		else:
+			dialog.notification('Nicht verfuegbar', "Film nicht mehr verfuegbar", xbmcgui.NOTIFICATION_WARNING, 5000)
+			
+	else:
+		encoded = match[0]
+		xbmc.log("encoded:" + encoded, level=xbmc.LOGNOTICE)
+		return "https:" + decode(encoded).decode("utf-8") 
 
 
-@plugin.route('/')
 def root():
 	addDirectoryItem(_handle, get_url(action='listing', url="/de/top-filme"), ListItem("Top Filme"), True)	
 	addDirectoryItem(_handle, get_url(action='listing', url="/de/neu"), ListItem("Neu im Programm"), True)
-	addDirectoryItem(_handle, get_url(action='gerne'), ListItem("Gernes"), True)	
+	addDirectoryItem(_handle, get_url(action='genre'), ListItem("Genres"), True)	
 	endOfDirectory(_handle)
 
-@plugin.route('/list_gerne')
-def list_gerne():
+
+def list_genre():
 	req = s.get("https://popcorntimes.tv/de/genres")
 	soup = BeautifulSoup(req.text, "html.parser")
-	gernes_h3 = soup.find("div", class_ = "pt-bordered-tiles").find_all("h3")
-	for h3 in gernes_h3:
+	genres_h3 = soup.find("div", class_ = "pt-bordered-tiles").find_all("h3")
+	for h3 in genres_h3:
 		link = h3.find("a");
 		addDirectoryItem(_handle, get_url(action='listing', url=link.get("href")), ListItem(link.text), True)
 		
 	endOfDirectory(_handle)
 	
-@plugin.route('/list_movies/<path:url>')
+
 def list_movies(url):
 	xbmcplugin.setContent(_handle, 'Movies')
 	req = s.get(base_url + url)
@@ -90,7 +99,6 @@ def list_movies(url):
 			
 			if div.find("p", class_ = "pt-video-time") is not None:			
 				year = div.find("p", class_ = "pt-video-time").text.split('|',1)[0].strip()
-				xbmc.log("year:" + year, level=xbmc.LOGNOTICE)
 			try:
 				year = int(year)
 			except:
@@ -107,16 +115,17 @@ def list_movies(url):
 	endOfDirectory(_handle)
 	xbmcplugin.setContent(_handle, 'Movies')
 
-
-@plugin.route('/play/<path:movie_url>')
 def play(movie_url):
 	title = movie_url
-	liz = xbmcgui.ListItem( 'Hard to Fight', iconImage='', thumbnailImage='')
+	liz = xbmcgui.ListItem( '', iconImage='', thumbnailImage='')
 	streamUrl = getStream(movie_url)
-	fullurl = streamUrl.strip() + "|Referer=" + movie_url.strip()
-	liz.setPath(fullurl)
-	xbmcplugin.setResolvedUrl(_handle, True, liz)
-
+	if streamUrl: 
+		fullurl = streamUrl.strip() + "|Referer=" + movie_url.strip()
+		liz.setPath(fullurl)
+		xbmcplugin.setResolvedUrl(_handle, True, liz)
+	#else:
+		#xbmcplugin.setResolvedUrl(_handle, False, liz)
+	
 def get_url(**kwargs):
 	"""
 	Create a URL for calling the plugin recursively from the given set of keyword arguments.
@@ -140,8 +149,8 @@ def router(paramstring):
 		elif params['action'] == 'play':
 			# Play a video from a provided URL.
 			play(params['url'])
-		elif params['action'] == 'gerne':
-			list_gerne()
+		elif params['action'] == 'genre':
+			list_genre()
 		else:
 			raise ValueError('Invalid paramstring: {0}!'.format(paramstring))
 	else:
