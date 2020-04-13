@@ -2,6 +2,6 @@
 <settings>
 <category label="Main">
     <setting id="Username" type="text" label="Username" default=""/>
-    <setting id="Password" type="text" label="Password" default=""/>
+    <setting id="Password" type="text" label="Password" option="hidden" default=""/>
  </category>
 </settings>

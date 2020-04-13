@@ -21,7 +21,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.open_sap" name="OpenSAP" version="0.1.0" provider-name="dh4rry">
+<addon id="plugin.video.open_sap" name="OpenSAP" version="0.2.0" provider-name="dh4rry">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.requests" version="2.12.4"/>
