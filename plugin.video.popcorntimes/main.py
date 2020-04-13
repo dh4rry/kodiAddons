@@ -9,9 +9,12 @@ import xbmc
 from xbmcgui import ListItem
 import xbmcplugin
 from xbmcplugin import addDirectoryItem, endOfDirectory
-from urllib import urlencode
-from urlparse import parse_qsl
-
+try:
+	from urllib import urlencode
+	from urlparse import parse_qsl
+except: 
+	from urllib.parse import urlencode, parse_qsl
+	
 _url = sys.argv[0]
 _handle = int(sys.argv[1])
 
@@ -117,7 +120,7 @@ def list_movies(url):
 
 def play(movie_url):
 	title = movie_url
-	liz = xbmcgui.ListItem( '', iconImage='', thumbnailImage='')
+	liz = xbmcgui.ListItem( '')
 	streamUrl = getStream(movie_url)
 	if streamUrl: 
 		fullurl = streamUrl.strip() + "|Referer=" + movie_url.strip()
