@@ -3,16 +3,17 @@ import requests
 from bs4 import BeautifulSoup
 import requests.sessions
 import re
-import routing
 import xbmcgui
 import xbmcaddon
 import xbmc
 from xbmcgui import ListItem
 import xbmcplugin
 from xbmcplugin import addDirectoryItem, endOfDirectory
+from urllib import urlencode
+from urlparse import parse_qsl
 
-
-plugin = routing.Plugin()
+_url = sys.argv[0]
+_handle = int(sys.argv[1])
 
 s = requests.Session()
 base_url = "https://popcorntimes.tv" 
@@ -54,10 +55,10 @@ def getStream(siteUrl):
 
 @plugin.route('/')
 def root():
-	addDirectoryItem(plugin.handle, plugin.url_for(list_movies, "/de/top-filme"), ListItem("Top Filme"), True)	
-	addDirectoryItem(plugin.handle, plugin.url_for(list_movies, "/de/neu"), ListItem("Neu im Programm"), True)
-	addDirectoryItem(plugin.handle, plugin.url_for(list_gerne), ListItem("Gernes"), True)	
-	endOfDirectory(plugin.handle)
+	addDirectoryItem(_handle, get_url(action='listing', url="/de/top-filme"), ListItem("Top Filme"), True)	
+	addDirectoryItem(_handle, get_url(action='listing', url="/de/neu"), ListItem("Neu im Programm"), True)
+	addDirectoryItem(_handle, get_url(action='gerne'), ListItem("Gernes"), True)	
+	endOfDirectory(_handle)
 
 @plugin.route('/list_gerne')
 def list_gerne():
@@ -66,13 +67,13 @@ def list_gerne():
 	gernes_h3 = soup.find("div", class_ = "pt-bordered-tiles").find_all("h3")
 	for h3 in gernes_h3:
 		link = h3.find("a");
-		addDirectoryItem(plugin.handle, plugin.url_for(list_movies, link.get("href")), ListItem(link.text), True)
+		addDirectoryItem(_handle, get_url(action='listing', url=link.get("href")), ListItem(link.text), True)
 		
-	endOfDirectory(plugin.handle)
+	endOfDirectory(_handle)
 	
 @plugin.route('/list_movies/<path:url>')
 def list_movies(url):
-	xbmcplugin.setContent(plugin.handle, 'Movies')
+	xbmcplugin.setContent(_handle, 'Movies')
 	req = s.get(base_url + url)
 	soup = BeautifulSoup(req.text, "html.parser")
 	mov_divs = soup.find_all("div", class_ = "pt-movie-tile-full")
@@ -101,10 +102,10 @@ def list_movies(url):
 			liz.setProperty('IsPlayable', 'true')
 			liz.setInfo('video', {'Title': title, 'Plot': plot, 'Year': year })
 			mov_url = base_url + div.find("a").get("href")
-			addDirectoryItem(plugin.handle, plugin.url_for(play, mov_url), liz, False)
+			addDirectoryItem(_handle, get_url(action='play', url=mov_url), liz, False)
 
-	endOfDirectory(plugin.handle)
-	xbmcplugin.setContent(plugin.handle, 'Movies')
+	endOfDirectory(_handle)
+	xbmcplugin.setContent(_handle, 'Movies')
 
 
 @plugin.route('/play/<path:movie_url>')
@@ -114,7 +115,37 @@ def play(movie_url):
 	streamUrl = getStream(movie_url)
 	fullurl = streamUrl.strip() + "|Referer=" + movie_url.strip()
 	liz.setPath(fullurl)
-	xbmcplugin.setResolvedUrl(plugin.handle, True, liz)
+	xbmcplugin.setResolvedUrl(_handle, True, liz)
+
+def get_url(**kwargs):
+	"""
+	Create a URL for calling the plugin recursively from the given set of keyword arguments.
+	:param kwargs: "argument=value" pairs
+	:type kwargs: dict
+	:return: plugin call URL
+	:rtype: str
+	"""
+	return '{0}?{1}'.format(_url, urlencode(kwargs))
+
+
+def router(paramstring):
+	# Parse a URL-encoded paramstring to the dictionary of
+	# {<parameter>: <value>} elements
+	params = dict(parse_qsl(paramstring))
+	# Check the parameters passed to the plugin
+	if params:
+		if params['action'] == 'listing':
+			# Display the list of videos in a provided category.
+			list_movies(params['url'])
+		elif params['action'] == 'play':
+			# Play a video from a provided URL.
+			play(params['url'])
+		elif params['action'] == 'gerne':
+			list_gerne()
+		else:
+			raise ValueError('Invalid paramstring: {0}!'.format(paramstring))
+	else:
+		root()
 
 if __name__ == '__main__':
-	plugin.run()
+	router(sys.argv[2][1:])
