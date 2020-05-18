@@ -1,4 +1,4 @@
-import base64
+import base64, codecs
 import requests
 from bs4 import BeautifulSoup
 import requests.sessions
@@ -20,33 +20,9 @@ _handle = int(sys.argv[1])
 
 s = requests.Session()
 base_url = "https://popcorntimes.tv" 
-def decodeS1Char(c):
-	i = 122
-	if c <= "Z":
-		i = 90
-	j = (ord(c) + 13)
-	if i >= j:
-		r = j
-	else:
-		r = j -26
-	return chr(r)
-
-def decodeS1(enc):
-	decodedS1 = ""
-	for c in enc:
-		if type(c) is not int:
-			if c >= "0" and c <= "9":
-				decodedS1 = decodedS1 + c
-			else:
-				decodedS1 = decodedS1 + decodeS1Char(c)
-	return decodedS1
 
 def decode(enc):
-	decodedS1 = decodeS1(enc)
-	print(decodedS1)
-	return base64.b64decode(decodedS1)
-
-
+	return base64.b64decode(codecs.decode(enc, 'rot13'))
 
 def getStream(siteUrl):
 	site = s.get(siteUrl)
